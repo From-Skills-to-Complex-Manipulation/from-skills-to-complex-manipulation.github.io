@@ -23,7 +23,7 @@
 <link rel="preload" href="assets/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
-<script>document.documentElement.classList.add('js');try{if(!sessionStorage.getItem('introSeen')){document.documentElement.classList.add('intro');sessionStorage.setItem('introSeen','1')}}catch(e){}</script>
+<script>document.documentElement.classList.add('js')</script>
 <script src="assets/js/main.js" defer></script>
 </head>
 <body>
@@ -32,7 +32,6 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="./">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3.5V8M7 8h18M8.5 8v12l3 4.5M23.5 8v12l-3 4.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="19.6" r="4.3" fill="#efa500"/></svg>
       <span class="brand-text">
         <span class="brand-title">From Skills to Complex Manipulation</span>
         <span class="brand-sub">ICRA 2027 Workshop · Seoul</span>
@@ -56,7 +55,7 @@
 
 <main id="main">
 <section class="hero has-grid" aria-labelledby="hero-title">
-  <div class="container hero-grid">
+  <div class="container">
     <div class="hero-copy">
       <p class="eyebrow">ICRA 2027 Workshop</p>
       <h1 id="hero-title">From Skills to Complex Manipulation<span class="visually-hidden">: </span><span class="hero-sub"><span class="t-grounding">Grounding</span>, <span class="t-learning">Learning</span> and <span class="t-control">Control</span></span></h1>
@@ -69,100 +68,9 @@
         <div><dt>Date</dt><dd><time datetime="2027-05-28">Fri, 28 May 2027</time></dd></div>
         <div><dt>Venue</dt><dd>Coex, Seoul, South Korea</dd></div>
         <div><dt>Format</dt><dd>Full day, in person</dd></div>
-        <div><dt>Papers due</dt><dd><time datetime="2027-03-26">26 Mar 2027</time></dd></div>
+        <div><dt>Papers due</dt><dd><time datetime="2027-03">March 2027</time></dd></div>
       </dl>
     </div>
-
-    <figure class="hero-figure">
-      <svg class="fig" viewBox="0 0 600 470" role="img" aria-labelledby="fig-t fig-d">
-        <title id="fig-t">Robot arm inserting a peg into a hole</title>
-        <desc id="fig-d">Line drawing of a robot arm holding a peg above a table. A camera detects the hole, a numbered path shows the five skills of the task (reach, grasp, lift, align, insert), and a spring at the wrist marks compliant control.</desc>
-        <defs>
-          <pattern id="fig-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hatch-line" x1="0" y1="0" x2="0" y2="7"/></pattern>
-        </defs>
-
-        <!-- Legend: the skill chain -->
-        <rect class="legend-box" x="24" y="24" width="150" height="158" rx="3"/>
-        <text class="legend-head" x="36" y="44">SKILL CHAIN</text>
-        <line class="legend-rule" x1="24" y1="54" x2="174" y2="54"/>
-        <text x="36" y="74"><tspan class="legend-num">1</tspan><tspan dx="10">reach</tspan></text>
-        <text x="36" y="92"><tspan class="legend-num">2</tspan><tspan dx="10">grasp</tspan></text>
-        <text x="36" y="110" class="legend-now"><tspan class="legend-num">3</tspan><tspan dx="10">lift</tspan><tspan dx="10" class="legend-num">now</tspan></text>
-        <text x="36" y="128"><tspan class="legend-num">4</tspan><tspan dx="10">align</tspan></text>
-        <text x="36" y="146"><tspan class="legend-num">5</tspan><tspan dx="10">insert</tspan></text>
-        <line class="legend-rule" x1="24" y1="158" x2="174" y2="158"/>
-        <text x="36" y="174">= peg-in-hole</text>
-
-        <!-- Camera and detection (grounding) -->
-        <path class="ink" d="M524 16h36M542 16v16"/>
-        <line class="frustum" x1="534" y1="62" x2="432" y2="377"/>
-        <line class="frustum" x1="550" y1="62" x2="564" y2="377"/>
-        <rect class="cam" x="520" y="32" width="44" height="28" rx="4"/>
-        <circle class="cam" cx="542" cy="46" r="7.5"/>
-        <circle class="bbox-tag" cx="542" cy="46" r="2.6"/>
-
-        <!-- Table -->
-        <rect x="24" y="431" width="552" height="12" fill="url(#fig-hatch)"/>
-        <line class="ink" x1="24" y1="430" x2="576" y2="430"/>
-
-        <!-- Block with hole -->
-        <path class="solid" d="M440 430V386H490V416H520V386H556V430Z"/>
-        <path d="M440 430V386H490V416H520V386H556V430Z" fill="url(#fig-hatch)"/>
-        <path class="ink" d="M440 430V386H490V416H520V386H556V430Z"/>
-        <rect class="bbox" x="430" y="377" width="136" height="59" rx="3"/>
-        <rect class="bbox-tag" x="430" y="360" width="64" height="17" rx="2"/>
-        <text class="bbox-text" x="436" y="372.5">hole 0.94</text>
-
-        <!-- Fixture where the peg was picked up -->
-        <rect class="ink solid" x="230" y="412" width="52" height="18"/>
-        <rect class="ghost" x="243" y="354" width="26" height="58" rx="2"/>
-
-        <!-- Robot -->
-        <path class="ink solid" d="M106 430L114 404H186L194 430Z"/>
-        <rect class="ink solid" x="134" y="362" width="32" height="42"/>
-        <line class="link-outer" x1="150" y1="362" x2="196" y2="206" stroke-width="27"/>
-        <line class="link-inner" x1="150" y1="362" x2="196" y2="206" stroke-width="23"/>
-        <line class="centerline" x1="150" y1="362" x2="196" y2="206"/>
-        <line class="link-outer" x1="196" y1="206" x2="344" y2="190" stroke-width="23"/>
-        <line class="link-inner" x1="196" y1="206" x2="344" y2="190" stroke-width="19"/>
-        <line class="centerline" x1="196" y1="206" x2="344" y2="190"/>
-        <circle class="ink solid" cx="150" cy="362" r="16"/>
-        <circle class="ink-fill" cx="150" cy="362" r="4.5"/>
-        <circle class="ink solid" cx="196" cy="206" r="15"/>
-        <circle class="ink-fill" cx="196" cy="206" r="4"/>
-        <circle class="ink solid" cx="344" cy="190" r="12.5"/>
-        <circle class="ink-fill" cx="344" cy="190" r="3.4"/>
-
-        <!-- Compliant wrist (control) -->
-        <path class="spring" d="M344 202.5V206l7 2.5-14 5 14 5-14 5 14 5-7 2.5V234"/>
-        <text class="label-c" x="358" y="224">K</text>
-
-        <!-- Gripper and peg -->
-        <rect class="peg" x="331" y="252" width="26" height="58" rx="2"/>
-        <rect class="ink-fill" x="318" y="234" width="52" height="9" rx="2"/>
-        <rect class="ink-fill" x="324" y="243" width="7" height="36" rx="1.5"/>
-        <rect class="ink-fill" x="357" y="243" width="7" height="36" rx="1.5"/>
-
-        <!-- Skill chain path (learning) -->
-        <path class="path-done" pathLength="1" d="M214 270C246 288 256 362 256 412C258 362 300 318 344 310"/>
-        <path class="path-next" d="M344 310C410 298 505 298 505 338L505 404"/>
-        <g class="wps">
-          <g class="wp wp-done"><circle cx="214" cy="270" r="9"/><text x="214" y="270">1</text></g>
-          <g class="wp wp-done"><circle cx="256" cy="412" r="9"/><text x="256" y="412">2</text></g>
-          <g class="wp wp-now"><circle class="ring" cx="344" cy="310" r="15"/><circle cx="344" cy="310" r="9"/><text x="344" y="310">3</text></g>
-          <g class="wp wp-next"><circle cx="505" cy="338" r="9"/><text x="505" y="338">4</text></g>
-          <g class="wp wp-next"><circle cx="505" cy="404" r="9"/><text x="505" y="404">5</text></g>
-        </g>
-      </svg>
-      <figcaption>
-        Peg-in-hole as a chain of five learned skills, <span class="math">τ = π<sub>5</sub> ∘ … ∘ π<sub>1</sub></span>.
-        <ul class="key-list">
-          <li class="key-g">grounding: perception</li>
-          <li class="key-l">learning: skill chain</li>
-          <li class="key-c">control: compliant wrist</li>
-        </ul>
-      </figcaption>
-    </figure>
   </div>
 </section>
 
@@ -194,8 +102,8 @@
 <section class="section section-alt" id="themes" aria-labelledby="themes-title">
   <div class="container">
     <p class="eyebrow">Three threads</p>
-    <h2 class="section-title" id="themes-title">One session for each part of the title</h2>
-    <p class="section-intro">Each session has a keynote, an invited talk and spotlight presentations of accepted papers. The day ends with a panel that brings the three threads together.</p>
+    <h2 class="section-title" id="themes-title">Three threads through the day</h2>
+    <p class="section-intro">The invited talks, contributed papers and panel discussion are built around the three parts of the workshop title.</p>
 
     <div class="themes">
       <article class="theme theme-grounding">
@@ -212,7 +120,6 @@
           <li>Language-conditioned skills</li>
           <li>Scene graphs</li>
         </ul>
-        <p class="theme-session"><span>Session I · 09:00</span><a href="program.html#grounding">In the program</a></p>
       </article>
 
       <article class="theme theme-learning">
@@ -229,7 +136,6 @@
           <li>Vision-language-action models</li>
           <li>Skill libraries</li>
         </ul>
-        <p class="theme-session"><span>Session II · 11:00</span><a href="program.html#learning">In the program</a></p>
       </article>
 
       <article class="theme theme-control">
@@ -246,7 +152,6 @@
           <li>Failure recovery</li>
           <li>Safety</li>
         </ul>
-        <p class="theme-session"><span>Session III · 13:30</span><a href="program.html#control">In the program</a></p>
       </article>
     </div>
   </div>
@@ -281,9 +186,9 @@
     <p class="eyebrow">Timeline</p>
     <h2 class="section-title" id="dates-title">Important dates</h2>
     <ol class="timeline">
-      <li><time datetime="2027-03-26">Fri, 26 Mar 2027</time><span class="what">Paper submission deadline</span></li>
-      <li><time datetime="2027-04-23">Fri, 23 Apr 2027</time><span class="what">Notification of acceptance</span></li>
-      <li><time datetime="2027-05-14">Fri, 14 May 2027</time><span class="what">Camera-ready papers and posters</span></li>
+      <li><time datetime="2027-03">March 2027</time><span class="what">Paper submission deadline</span></li>
+      <li><time datetime="2027-04">April 2027</time><span class="what">Notification of acceptance</span></li>
+      <li><time datetime="2027-05">May 2027</time><span class="what">Camera-ready papers and posters</span></li>
       <li class="is-key"><time datetime="2027-05-28">Fri, 28 May 2027</time><span class="what">Workshop day at ICRA 2027</span><span class="note">Coex, Seoul</span></li>
     </ol>
     <p class="fine">Dates are tentative. All deadlines are 23:59 Anywhere on Earth (AoE).</p>
@@ -313,7 +218,7 @@
   <div class="container cta-band">
     <div>
       <h2 id="cta-title">Working on skills, long-horizon tasks or contact-rich control? Send us your paper.</h2>
-      <p>Short papers and extended abstracts are due <strong>26 March 2027</strong>.</p>
+      <p>Short papers and extended abstracts are due in <strong>March 2027</strong>.</p>
     </div>
     <a class="btn btn-primary" href="call-for-papers.html">Call for Papers <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
@@ -325,8 +230,8 @@
   "@type": "Event",
   "name": "From Skills to Complex Manipulation: Grounding, Learning and Control",
   "description": "A full-day workshop at ICRA 2027 on composing robot skills into complex, long-horizon manipulation.",
-  "startDate": "2027-05-28T08:50:00+09:00",
-  "endDate": "2027-05-28T17:30:00+09:00",
+  "startDate": "2027-05-28T08:30:00+09:00",
+  "endDate": "2027-05-28T18:00:00+09:00",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
   "location": {
