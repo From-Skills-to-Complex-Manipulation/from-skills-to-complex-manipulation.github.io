@@ -778,6 +778,13 @@ a.ext::after {
   letter-spacing: -0.015em;
 }
 
+/* Body text that runs the full width of the container. */
+.section-text {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  color: var(--ink-2);
+}
+
 .section-intro {
   margin-top: 18px;
   max-width: 40em;
