@@ -1092,34 +1092,6 @@ a.ext::after {
   }
 }
 
-/* ---------- Call-to-action band ---------- */
-
-.cta-section {
-  padding-block: clamp(48px, 6vw, 80px);
-}
-
-.cta-band {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px 40px;
-  flex-wrap: wrap;
-}
-
-.cta-band h2 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  max-width: 22em;
-}
-
-.cta-band p {
-  margin-top: 8px;
-  color: var(--ink-2);
-}
-
 /* ---------- Inner page head ---------- */
 
 .page-head {
@@ -1416,19 +1388,33 @@ a.ext::after {
 
 /* ---------- People (speakers, panelists, organizers) ---------- */
 
+/* Each card spans four rows of the parent grid (photo, name, affiliation, detail)
+   so the same lines start at the same height across a row of cards. */
 .people {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 196px), 1fr));
-  gap: 40px 28px;
+  gap: 0 28px;
   margin-top: clamp(28px, 4vw, 44px);
   padding: 0;
   list-style: none;
 }
 
+.people > .person {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  padding-bottom: 48px;
+}
+
 @media (max-width: 479px) {
   .people {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px 16px;
+    gap: 0 16px;
+  }
+
+  .people > .person {
+    padding-bottom: 32px;
   }
 }
 
@@ -1480,18 +1466,7 @@ a.ext::after {
   opacity: 0.3;
 }
 
-.person-role {
-  margin-top: 14px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--c-ink);
-}
-
 .person h3 {
-  margin-top: 4px;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 1.3rem;
@@ -1499,14 +1474,14 @@ a.ext::after {
 }
 
 .person-affil {
-  margin-top: 2px;
+  margin-top: 4px;
   font-size: 0.95rem;
   color: var(--ink-2);
 }
 
 .person-talk {
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
   border-top: 1px dashed var(--rule-strong);
   font-size: 0.92rem;
   color: var(--ink-2);
@@ -1524,7 +1499,7 @@ a.ext::after {
 }
 
 .person-photo + h3 {
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 /* Speakers page: one row per talk, speaker on the left, talk on the right. */

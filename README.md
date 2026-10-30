@@ -1,6 +1,6 @@
 # From Skills to Complex Manipulation: Grounding, Learning and Control
 
-Website for the ICRA 2027 workshop on Friday, 28 May 2027, at Coex, Seoul.
+Website for the ICRA 2027 workshop on 24 or 28 May 2027 (shown as 24/28 May 2027) at Coex, Seoul.
 
 Live site: https://from-skills-to-complex-manipulation.github.io
 
@@ -34,7 +34,7 @@ The site is plain HTML and CSS with no build step. GitHub Pages publishes every 
 
 The `alt` is empty because the name is printed right under the photo.
 
-**Changing the date.** Search all `.html` files for `28 May`, `2027-05-28` and `Fri,`. The social preview image `assets/img/og-image.png` also shows the date, so it needs to be regenerated.
+**Changing the date.** Search all `.html` files for `24/28` and `first day/last day`. The social preview image `assets/img/og-image.png` also shows the date, so it needs to be regenerated.
 
 **Changing the menu or footer.** Each page has its own copy of the header and footer, so update every `.html` file.
 
