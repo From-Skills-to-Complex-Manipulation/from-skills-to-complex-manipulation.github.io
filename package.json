@@ -1,0 +1,12 @@
+{
+  "name": "from-skills-to-complex-manipulation",
+  "version": "1.0.0",
+  "description": "From Skills to Complex Manipulation: Grounding, Learning and Control",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
