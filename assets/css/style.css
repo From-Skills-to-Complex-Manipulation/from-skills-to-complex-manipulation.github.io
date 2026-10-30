@@ -1510,8 +1510,73 @@ a.ext::after {
   list-style: none;
 }
 
-.people-sm {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
+/* Organizers: photo beside the text, two per row. */
+.orgs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 48px;
+  margin-top: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.org {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.org h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.org-title {
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.org-affil {
+  margin-top: 2px;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+
+.org-note {
+  margin-top: 6px;
+  font-size: 0.88rem;
+  color: var(--ink-3);
+}
+
+.org-mail {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 859px) {
+  .orgs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 479px) {
+  .org {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .org h3 {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 479px) {
@@ -1579,14 +1644,17 @@ a.ext::after {
   background: var(--c);
 }
 
+/* Placeholder silhouette until a real photo is added. */
 .person-photo svg {
   position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 46%;
-  height: 46%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 74%;
+  height: auto;
   color: var(--ink-3);
-  opacity: 0.55;
+  opacity: 0.3;
 }
 
 .person-role {
@@ -1619,6 +1687,21 @@ a.ext::after {
   border-top: 1px dashed var(--rule-strong);
   font-size: 0.92rem;
   color: var(--ink-2);
+}
+
+.person-label {
+  display: block;
+  margin-bottom: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.person-photo + h3 {
+  margin-top: 14px;
 }
 
 .person-links {
