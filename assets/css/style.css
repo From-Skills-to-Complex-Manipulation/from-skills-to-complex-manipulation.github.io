@@ -347,12 +347,6 @@ a.ext::after {
   text-decoration: none;
 }
 
-.brand-mark {
-  flex: none;
-  width: 34px;
-  height: 34px;
-}
-
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -860,109 +854,62 @@ a.ext::after {
   font-size: 0.85em;
 }
 
-/* ---------- Themes ---------- */
+/* ---------- Schedule overview (home) ---------- */
 
-.themes {
+.glance {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: clamp(36px, 5vw, 56px);
-  border: 1px solid var(--rule-strong);
-  border-radius: 8px;
-  background: var(--card);
-  overflow: hidden;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(32px, 6vw, 80px);
+  margin-top: clamp(32px, 4vw, 48px);
 }
 
-.theme {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 30px clamp(20px, 2.4vw, 32px) 28px;
-  border-left: 1px solid var(--rule);
-}
-
-.theme:first-child {
-  border-left: 0;
-}
-
-.theme::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 4px;
-  background: var(--c);
-}
-
-.theme-grounding {
-  --c: var(--grounding);
-  --c-ink: var(--grounding);
-  --c-tint: var(--grounding-tint);
-}
-
-.theme-learning {
-  --c: var(--learning);
-  --c-ink: var(--learning-ink);
-  --c-tint: var(--learning-tint);
-}
-
-.theme-control {
-  --c: var(--control);
-  --c-ink: var(--control);
-  --c-tint: var(--control-tint);
-}
-
-.theme-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.theme-num {
+.glance-h {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 500;
-  color: var(--c-ink);
-}
-
-.theme-icon {
-  width: 52px;
-  height: 52px;
-  color: var(--c-ink);
-}
-
-.theme h3 {
-  margin-top: 14px;
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 1.75rem;
-  letter-spacing: -0.01em;
-}
-
-.theme-tagline {
-  margin-top: 2px;
-  font-weight: 500;
-  color: var(--c-ink);
-}
-
-.theme p.theme-text {
-  margin-top: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--ink-2);
-  font-size: 1rem;
 }
 
-@media (max-width: 899px) {
-  .themes {
+.glance-list div {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.glance-list dt {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+  padding-top: 1px;
+}
+
+.glance-list dd {
+  font-weight: 500;
+}
+
+.glance-list .is-break dd {
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+.glance-list .is-poster dd {
+  color: var(--learning-ink);
+}
+
+@media (max-width: 699px) {
+  .glance {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .theme {
-    border-left: 0;
-    border-top: 1px solid var(--rule);
-  }
-
-  .theme:first-child {
-    border-top: 0;
+  .glance > div + div {
+    margin-top: 32px;
   }
 }
 
@@ -992,7 +939,6 @@ a.ext::after {
   height: 11px;
   border-radius: 50%;
   border: 2px solid var(--learning);
-  background: var(--paper);
 }
 
 @media (max-width: 699px) {
@@ -1685,6 +1631,85 @@ a.ext::after {
   margin-top: 14px;
 }
 
+/* Speakers page: one row per talk, speaker on the left, talk on the right. */
+.talks {
+  margin-top: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.talk {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  padding: 36px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.talk-info {
+  max-width: 68ch;
+}
+
+.talk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-2);
+}
+
+.talk-meta span + span::before {
+  content: "·";
+  margin-right: 18px;
+  color: var(--ink-3);
+}
+
+.talk-title {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.55rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.talk-label {
+  margin-top: 22px;
+}
+
+.talk-abstract {
+  margin-top: 6px;
+  color: var(--ink-2);
+}
+
+@media (max-width: 679px) {
+  .talk {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 28px 0;
+  }
+
+  .talk-person {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: start;
+  }
+
+  .talk-person .person-photo {
+    grid-row: span 3;
+  }
+
+  .talk-person .person-photo + h3 {
+    margin-top: 0;
+  }
+
+  .talk-title {
+    font-size: 1.3rem;
+  }
+}
+
 .person-links {
   margin-top: 8px;
   font-size: 0.92rem;
@@ -1945,11 +1970,6 @@ a.ext::after {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-}
-
-.footer-brand .brand-mark {
-  width: 32px;
-  height: 32px;
 }
 
 .footer-about p {
