@@ -30,3 +30,31 @@ if (toggle && nav) {
     if (event.matches) setOpen(false);
   });
 }
+
+// Speaker and organizer cards: give the name, affiliation and detail blocks the
+// same height in every card of a grid, so all cards are equally tall and their
+// text lines up. Without JavaScript, CSS subgrid still aligns each row.
+const grids = document.querySelectorAll('.people');
+const cardParts = ['h3', '.person-affil', '.person-talk'];
+
+const equalizeCards = () => {
+  grids.forEach((grid) => {
+    const cards = [...grid.querySelectorAll(':scope > .person')];
+    cardParts.forEach((selector) => {
+      const blocks = cards.map((card) => card.querySelector(selector)).filter(Boolean);
+      blocks.forEach((block) => { block.style.minHeight = ''; });
+      const tallest = Math.max(...blocks.map((block) => block.getBoundingClientRect().height));
+      blocks.forEach((block) => { block.style.minHeight = `${tallest}px`; });
+    });
+  });
+};
+
+if (grids.length) {
+  let frame = 0;
+  equalizeCards();
+  document.fonts?.ready.then(equalizeCards);
+  addEventListener('resize', () => {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(equalizeCards);
+  });
+}
