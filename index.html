@@ -91,8 +91,8 @@
       <h2 class="section-title" id="scope-title">Skills keep getting better. Long tasks are still hard.</h2>
     </div>
     <div class="prose">
-      <p>Learned policies, large pretrained models and better hardware have made single manipulation skills far more capable. A robot can now be taught to grasp unfamiliar objects, open a drawer or fold a towel from a modest number of demonstrations.</p>
-      <p>Real tasks are rarely a single skill. Assembling a product, clearing a table or loading a dishwasher means picking the right skill at the right moment, adapting it to objects the robot has never seen, and keeping contact under control when things go wrong. Small errors compound over long horizons:</p>
+      <p>Learned policies, large pretrained models and better hardware have made single manipulation skills far more capable. A robot can now be taught to grasp unfamiliar objects, push them into place or open a drawer from a modest number of demonstrations.</p>
+      <p>Real tasks are rarely a single skill. Replenishing a shelf, clearing a cluttered table or moving a large object with two arms means picking the right skill at the right moment, adapting it to objects the robot has never seen, and keeping contact under control in tight spaces. Small errors compound over long horizons:</p>
       <p class="lead-stat">A skill that succeeds 95% of the time finishes a twenty-step task only about a third of the time. <span class="mono">(0.95<sup>20</sup> ≈ 0.36)</span></p>
       <p>This workshop looks at that gap through three lenses: how skills are <strong>grounded</strong> in perception and language, how they are <strong>learned</strong> and composed, and how they are <strong>controlled</strong> through contact. We want to bring the robot learning, task and motion planning, and control communities into one room to compare approaches and agree on what is still missing.</p>
     </div>
@@ -114,12 +114,6 @@
         <h3>Grounding</h3>
         <p class="theme-tagline">Connecting skills to the world</p>
         <p class="theme-text">Which skill applies, to which object, and when? Perception, scene understanding and language that tie abstract skills to the objects in front of the robot.</p>
-        <ul class="chips">
-          <li>Open-vocabulary perception</li>
-          <li>Affordances</li>
-          <li>Language-conditioned skills</li>
-          <li>Scene graphs</li>
-        </ul>
       </article>
 
       <article class="theme theme-learning">
@@ -130,12 +124,6 @@
         <h3>Learning</h3>
         <p class="theme-tagline">Acquiring and composing skills</p>
         <p class="theme-text">How are skills learned from demonstrations, play or simulation, and how are they sequenced and reused for tasks nobody demonstrated end to end?</p>
-        <ul class="chips">
-          <li>Imitation learning</li>
-          <li>Reinforcement learning</li>
-          <li>Vision-language-action models</li>
-          <li>Skill libraries</li>
-        </ul>
       </article>
 
       <article class="theme theme-control">
@@ -146,12 +134,6 @@
         <h3>Control</h3>
         <p class="theme-tagline">Executing through contact</p>
         <p class="theme-text">How do long, contact-rich executions stay stable, safe and recoverable when the world pushes back?</p>
-        <ul class="chips">
-          <li>Impedance and force control</li>
-          <li>Dexterous and bimanual manipulation</li>
-          <li>Failure recovery</li>
-          <li>Safety</li>
-        </ul>
       </article>
     </div>
   </div>
@@ -163,19 +145,16 @@
     <h2 class="section-title" id="topics-title">Topics of interest</h2>
     <p class="section-intro">We welcome work on any part of the path from individual skills to complex manipulation, including:</p>
     <ul class="topics">
-      <li>Skill discovery, representation and skill libraries</li>
-      <li>Composing and sequencing skills for long-horizon tasks</li>
-      <li>Task and motion planning with learned skills</li>
-      <li>Vision-language-action and other foundation models for manipulation</li>
-      <li>Grounding language, goals and instructions in perception</li>
-      <li>Affordances and object-centric representations</li>
-      <li>Imitation learning from demonstrations, video and play</li>
-      <li>Reinforcement learning and sim-to-real transfer</li>
-      <li>Contact-rich and dexterous manipulation</li>
-      <li>Force, impedance and whole-body control</li>
-      <li>Bimanual and mobile manipulation</li>
-      <li>Failure detection, recovery and safe execution</li>
-      <li>Benchmarks, datasets and evaluation for long-horizon manipulation</li>
+      <li>Unimanual or bimanual mobile object manipulation</li>
+      <li>Non-prehensile object manipulation</li>
+      <li>Simple grasping and manipulation with external dexterity</li>
+      <li>Manipulation in clutter</li>
+      <li>Manipulation in constrained spaces</li>
+      <li>Shelf replenishment</li>
+      <li>Large object manipulation</li>
+      <li>Manipulation planning</li>
+      <li>Skill composition and long-horizon reasoning</li>
+      <li>Multimodal perception and grounding</li>
     </ul>
     <p class="fine"><a href="call-for-papers.html">Read the full call for papers</a></p>
   </div>
@@ -202,7 +181,7 @@
     <div class="info-cols">
       <div>
         <h3>Venue</h3>
-        <p>The workshop takes place at Coex (Convention &amp; Exhibition Center) in Seoul, Republic of Korea, the main venue of ICRA 2027. The room will be announced closer to the conference.</p>
+        <p>The workshop takes place at Coex (Convention &amp; Exhibition Center) in Seoul, South Korea, the main venue of ICRA 2027. The room will be announced closer to the conference.</p>
         <a class="ext" href="https://2027.ieee-icra.org/">Venue details on the ICRA 2027 website</a>
       </div>
       <div>
@@ -218,7 +197,7 @@
   <div class="container cta-band">
     <div>
       <h2 id="cta-title">Working on skills, long-horizon tasks or contact-rich control? Send us your paper.</h2>
-      <p>Short papers and extended abstracts are due in <strong>March 2027</strong>.</p>
+      <p>Short papers are due in <strong>March 2027</strong>.</p>
     </div>
     <a class="btn btn-primary" href="call-for-papers.html">Call for Papers <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>

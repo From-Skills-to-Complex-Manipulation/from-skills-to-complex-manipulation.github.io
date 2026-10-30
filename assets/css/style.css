@@ -951,25 +951,6 @@ a.ext::after {
   font-size: 1rem;
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 18px;
-  padding: 0;
-  list-style: none;
-}
-
-.chips li {
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--c-tint, var(--paper-2));
-  color: var(--c-ink, var(--ink-2));
-  font-size: 0.8rem;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
 @media (max-width: 899px) {
   .themes {
     grid-template-columns: minmax(0, 1fr);
@@ -1871,42 +1852,6 @@ a.ext::after {
   font-size: 0.82rem;
 }
 
-.formats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.format {
-  padding: 20px;
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius);
-  background: var(--card);
-}
-
-.format .pages {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--learning-ink);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.format h3 {
-  margin-top: 6px !important;
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 1.35rem;
-}
-
-.format p {
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: var(--ink-2);
-}
-
 @media (max-width: 959px) {
   .cfp-layout {
     grid-template-columns: minmax(0, 1fr);
@@ -1915,12 +1860,6 @@ a.ext::after {
   .cfp-aside {
     position: static;
     order: -1;
-  }
-}
-
-@media (max-width: 559px) {
-  .formats {
-    grid-template-columns: minmax(0, 1fr);
   }
 }
 
